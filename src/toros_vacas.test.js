@@ -1,8 +1,10 @@
 import juego from "./toros_vacas.js";
 
 describe("Sumar", () => {
-  it("Devuelve una cadena vacia al ingresar un numero que no coincide ni en posicion ni valor ni en posicion", () => {
+  it("Devuelve una cadena vacia al ingresar un numero que no coincide ni en posicion ni valor", () => {
     expect(juego(1234, 5678)).toEqual("");
   });
-  
+  it("Devuelve !!!! al ingresar un numero que coincide en posicion y valor", () => {
+    expect(juego(1234, 1234)).toEqual("!!!!");
+  });
 });
