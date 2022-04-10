@@ -28,4 +28,7 @@ describe("Sumar", () => {
   it("Devuelve * si el tercer numero coincide en valor", () => {
     expect(juego("1234", "3567")).toEqual("*");
   });
+  it("Devuelve * si el cuarto numero coincide en valor", () => {
+    expect(juego("1234", "4567")).toEqual("*");
+  });
 });

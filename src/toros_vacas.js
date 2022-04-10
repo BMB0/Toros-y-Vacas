@@ -23,6 +23,10 @@ function juego(SecretNumber, GuessNumber) {
   }
   if(SecretNumber[3] === GuessNumber[3]){
     res += "!";
+  }else{
+    if(GuessNumber.search(SecretNumber[3]) > -1){
+      res += "*";
+    }
   }
   return res;
 }
