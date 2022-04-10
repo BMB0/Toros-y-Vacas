@@ -22,4 +22,7 @@ describe("Sumar", () => {
   it("Devuelve * si el primer numero coincide en valor", () => {
     expect(juego("1234", "5617")).toEqual("*");
   });
+  it("Devuelve * si el segudno numero coincide en valor", () => {
+    expect(juego("1234", "2567")).toEqual("*");
+  });
 });
