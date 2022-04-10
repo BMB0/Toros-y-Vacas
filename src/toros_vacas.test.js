@@ -13,4 +13,7 @@ describe("Sumar", () => {
   it("Devuelve ! si el segundo numero que coincide en posicion y valor", () => {
     expect(juego("1234", "5278")).toEqual("!");
   });
+  it("Devuelve ! si el tercer numero que coincide en posicion y valor", () => {
+    expect(juego("1234", "5637")).toEqual("!");
+  });
 });
