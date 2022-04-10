@@ -6,6 +6,9 @@ function juego(SecretNumber, GuessNumber) {
     if(SecretNumber[0] === GuessNumber[0]){
       res += "!";
     }
+    if(SecretNumber[1] === GuessNumber[1]){
+      res += "!";
+    }
   }
   return res;
 }

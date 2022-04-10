@@ -7,7 +7,10 @@ describe("Sumar", () => {
   it("Devuelve !!!! al ingresar una cadena de numeros que coincidan en posicion y valor", () => {
     expect(juego("1234", "1234")).toEqual("!!!!");
   });
-  it("Devuelve ! al ingresar un numero que coincide en posicion y valor", () => {
+  it("Devuelve ! si el primer numero que coincide en posicion y valor", () => {
     expect(juego("1234", "1567")).toEqual("!");
+  });
+  it("Devuelve ! si el segundo numero que coincide en posicion y valor", () => {
+    expect(juego("1234", "5278")).toEqual("!");
   });
 });
