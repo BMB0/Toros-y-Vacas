@@ -1,34 +1,16 @@
 function juego(SecretNumber, GuessNumber) {
   var res = "";
-  if(SecretNumber[0] === GuessNumber[0]){
-    res += "!";
-  }else{
-    if(GuessNumber.search(SecretNumber[0]) > -1){
-      res += "*";
-    }
-  }
-  if(SecretNumber[1] === GuessNumber[1]){
-    res += "!";
-  }else{
-    if(GuessNumber.search(SecretNumber[1]) > -1){
-      res += "*";
-    }
-  }
-  if(SecretNumber[2] === GuessNumber[2]){
-    res += "!";
-  }else{
-    if(GuessNumber.search(SecretNumber[2]) > -1){
-      res += "*";
-    }
-  }
-  if(SecretNumber[3] === GuessNumber[3]){
-    res += "!";
-  }else{
-    if(GuessNumber.search(SecretNumber[3]) > -1){
-      res += "*";
+  for(var i = 0; i < 4; i++) {
+    if(SecretNumber[i] === GuessNumber[i]){
+      res += "!";
+    }else{
+      if(GuessNumber.search(SecretNumber[i]) > -1){
+        res += "*";
+      }
     }
   }
   return res;
 }
+
 
 export default juego;
