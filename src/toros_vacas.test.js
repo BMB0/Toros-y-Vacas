@@ -34,4 +34,7 @@ describe("Sumar", () => {
   it("Devuelve solo un * si el numero se repite", () => {
     expect(juego("1231", "5617")).toEqual("*");
   });
+   it("Devuelve solo un * si el numero se repite", () => {
+    expect(juego("1276", "3281")).toEqual("!*");
+  });
 });
