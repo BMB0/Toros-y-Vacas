@@ -19,6 +19,4 @@ function juego(SecretNumber, GuessNumber) {
   return res;
 }
 
-// concatennar primero toros y luego vacas usando dos variables res = toros + vacas (!!**)
-
 export default juego;
