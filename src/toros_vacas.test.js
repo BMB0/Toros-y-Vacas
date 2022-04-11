@@ -31,4 +31,7 @@ describe("Sumar", () => {
   it("Devuelve * si el cuarto numero coincide en valor", () => {
     expect(juego("1234", "4567")).toEqual("*");
   });
+  it("Devuelve solo un * si el numero se repite", () => {
+    expect(juego("1231", "5617")).toEqual("*");
+  });
 });
