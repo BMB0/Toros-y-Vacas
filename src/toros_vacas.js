@@ -22,7 +22,7 @@ function vacasSearch(checked, SecretNumber, GuessNumber){
   for(var i = 0; i < 4; i++) {
     if(SecretNumber[i] !== GuessNumber[i]){
       var pos = GuessNumber.search(SecretNumber[i])
-      if(pos > -1 && checked[pos] !== 1){
+      if(pos > -1 && checked[pos] == null){
         vacas += "*";
         checked[pos] = 1;
       }
