@@ -1,11 +1,21 @@
 <html>
   <body>
+
     <h1>Toros y Vacas</h1>
     <form id="toros-vacas-form">
-      <label for="primer-numero">Ingrese el numero secreto:</label>
+      <label for="numero-secreto">Ingrese el numero secreto:</label>
       <input type="number" id="numero-secreto" />
       <input type="submit" value="Jugar" />
     </form>
+
+    <h1>Intento</h1>
+    
+    <form id="intento-form">
+      <label for="numero-intento">Ingrese su intento:</label>
+      <input type="number" id="numero-intento" />
+      <input type="submit" value="Jugar" />
+    </form>
+    
     <div id="resultado-div"></div>
 
     <script type="module" src="./src/presenter.js"></script>
