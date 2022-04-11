@@ -20,8 +20,8 @@ function torosSearch(checked, SecretNumber, GuessNumber){
 function vacasSearch(checked, SecretNumber, GuessNumber){
   var vacas = "";
   for(var i = 0; i < 4; i++) {
-    var pos = buscarPosicionDelNumero(SecretNumber[i], GuessNumber);    // pos = -1 si no se encuentra el numero en la cadena
-    if(pos > -1 && checked[pos] == null){
+    var pos = buscarPosicionDelNumero( GuessNumber[i], SecretNumber);    // pos = -1 si no se encuentra el numero en la cadena
+    if(pos > -1 && checked[i] == null){
       vacas += "*";
       checked[pos] = 1;
     }
