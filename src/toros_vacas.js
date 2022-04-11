@@ -1,13 +1,26 @@
 function juego(SecretNumber, GuessNumber) {
   var checked = [];
-  var res = "";
+  var toros = torosSearch(checked, SecretNumber, GuessNumber);
+  var vacas = vacasSearch(checked, SecretNumber, GuessNumber);
+  var res = toros + vacas;
+  return res;
+}
+
+function torosSearch(checked, SecretNumber, GuessNumber){
   var toros = "";
-  var vacas = "";
   for(var i = 0; i < 4; i++) {
     if(SecretNumber[i] === GuessNumber[i]){
       toros += "!";
       checked[i] = 0;
-    }else{
+    }
+  }
+  return toros;
+}
+
+function vacasSearch(checked, SecretNumber, GuessNumber){
+  var vacas = "";
+  for(var i = 0; i < 4; i++) {
+    if(SecretNumber[i] !== GuessNumber[i]){
       var pos = GuessNumber.search(SecretNumber[i])
       if(pos > -1 && checked[pos] !== 1){
         vacas += "*";
@@ -15,8 +28,7 @@ function juego(SecretNumber, GuessNumber) {
       }
     }
   }
-  res = toros + vacas;
-  return res;
+  return vacas;
 }
 
 export default juego;
