@@ -24,7 +24,7 @@ form2.addEventListener("submit", (event) => {
   if(numero_de_intentos > 0 && resultado != "!!!!"){
     div.innerHTML = "<p>" + resultado +" | Numero de intentos restantes : " + numero_de_intentos + "</p>";
   }else if (numero_de_intentos <= 0 && resultado != "!!!!"){ 
-    div.innerHTML = "<p>" + "Perdiste!" + "</p>";
+    div.innerHTML = "<p>" + "Perdiste! La respuesta correcta era: " + secretNumber + "</p>";
   }else div.innerHTML = "<p>" + "Ganaste!" + "</p>";
 });
 
