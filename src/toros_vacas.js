@@ -22,7 +22,7 @@ function vacasSearch(checkedVacas, checkedToros, SecretNumber, GuessNumber){
   var vacas = "";
   for(var i = 0; i < 4; i++) {
     var pos = buscarPosicionDelNumero( GuessNumber[i], SecretNumber, checkedToros, checkedVacas, i);    // pos = -1 si no se encuentra el numero en la cadena
-    if(pos > -1 && checkedVacas[pos] == null ){
+    if(pos > -1){
       vacas += "*";
       checkedVacas[pos] = 1;
     }
@@ -32,9 +32,11 @@ function vacasSearch(checkedVacas, checkedToros, SecretNumber, GuessNumber){
 
 function buscarPosicionDelNumero(numero, cadena, checkedToros, checkedVacas, posicion){
   var pos = -1;
-  for(var i = 0; i < 4; i++) {
-    if(cadena[i] == numero && checkedToros[posicion] == null && checkedVacas[i] == null){
-      pos = i;
+  if(checkedToros[posicion] == null){
+    for(var i = 0; i < 4; i++) {
+      if(cadena[i] == numero && checkedVacas[i] == null){
+        pos = i;
+      }
     }
   }
   return pos;
