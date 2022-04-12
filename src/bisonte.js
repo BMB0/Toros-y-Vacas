@@ -4,6 +4,10 @@ function bisonte (SecretNumber) {
     if(numero % 2 == 0 || numero % 3 == 0 || numero % 5 == 0 || numero % 7 == 0) {
         bisonte = "%";
     }
+    var numero = parseInt(SecretNumber[1]);
+    if(numero % 2 == 0 || numero % 3 == 0 || numero % 5 == 0 || numero % 7 == 0) {
+        bisonte = "%";
+    }
     return bisonte;
 }
 
