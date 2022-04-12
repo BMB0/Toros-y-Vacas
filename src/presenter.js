@@ -6,6 +6,7 @@ const form = document.querySelector("#toros-vacas-form");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+  numero_de_intentos = 10;
   div.innerHTML = "<p>"+ "Numero de intentos :" + numero_de_intentos + "</p>";
 });
 
@@ -25,4 +26,13 @@ form2.addEventListener("submit", (event) => {
   }else if (numero_de_intentos <= 0 && resultado != "!!!!"){ 
     div.innerHTML = "<p>" + "Perdiste!" + "</p>";
   }else div.innerHTML = "<p>" + "Ganaste!" + "</p>";
+});
+
+const form3 = document.querySelector("#volver-jugar-form");
+
+form3.addEventListener("submit", (event) => {
+  event.preventDefault();
+  form.reset();
+  form2.reset();
+  div.innerHTML = "<p>"+ "" + "</p>";
 });
