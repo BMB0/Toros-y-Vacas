@@ -34,7 +34,7 @@ function buscarPosicionDelNumero(numero, cadena, checkedToros, checkedVacas, pos
   var pos = -1;
   if(checkedToros[posicion] == null){
     for(var i = 0; i < 4; i++) {
-      if(cadena[i] == numero && checkedVacas[i] == null){
+      if(cadena[i] == numero && checkedVacas[i] == null && checkedToros[i] == null){
         pos = i;
       }
     }
