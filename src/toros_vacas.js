@@ -1,36 +1,42 @@
 function juego(SecretNumber, GuessNumber) {
-  var checked = [];
-  var toros = torosSearch(checked, SecretNumber, GuessNumber);
-  var vacas = vacasSearch(checked, SecretNumber, GuessNumber);
+  var checkedToros = [];
+  var checkedVacas = [];
+  var toros = torosSearch(checkedToros, SecretNumber, GuessNumber);
+  var vacas = vacasSearch(checkedVacas, checkedToros, SecretNumber, GuessNumber);
   var res = toros + vacas;
   return res;
 }
 
-function torosSearch(checked, SecretNumber, GuessNumber){
+function torosSearch(checkedToros, SecretNumber, GuessNumber){
   var toros = "";
   for(var i = 0; i < 4; i++) {
     if(SecretNumber[i] === GuessNumber[i]){
       toros += "!";
-      checked[i] = 0;
+      checkedToros[i] = 1;
     }
   }
   return toros;
 }
 
-function vacasSearch(checked, SecretNumber, GuessNumber){
+function vacasSearch(checkedVacas, checkedToros, SecretNumber, GuessNumber){
   var vacas = "";
   for(var i = 0; i < 4; i++) {
-    var pos = buscarPosicionDelNumero( GuessNumber[i], SecretNumber);    // pos = -1 si no se encuentra el numero en la cadena
-    if(pos > -1 && checked[i] == null){
+    var pos = buscarPosicionDelNumero( GuessNumber[i], SecretNumber, checkedToros, checkedVacas, i);    // pos = -1 si no se encuentra el numero en la cadena
+    if(pos > -1 && checkedVacas[pos] == null ){
       vacas += "*";
-      checked[pos] = 1;
+      checkedVacas[pos] = 1;
     }
   }
   return vacas;
 }
 
-function buscarPosicionDelNumero(numero, cadena){
-  var pos = cadena.search(numero);
+function buscarPosicionDelNumero(numero, cadena, checkedToros, checkedVacas, posicion){
+  var pos = -1;
+  for(var i = 0; i < 4; i++) {
+    if(cadena[i] == numero && checkedToros[posicion] == null && checkedVacas[i] == null){
+      pos = i;
+    }
+  }
   return pos;
 }
 

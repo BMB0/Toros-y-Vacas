@@ -40,4 +40,7 @@ describe("Sumar", () => {
   it("Devuelve solo ! en caso de ya se encuentre en caracter que coincida en valor y posicion", () => {
     expect(juego("1271", "3981")).toEqual("!");
   });
+  it("Devuelve solo ! en caso de ya se encuentre en caracter que coincida en valor y posicion", () => {
+    expect(juego("1212", "2121")).toEqual("****");
+  });
 });
