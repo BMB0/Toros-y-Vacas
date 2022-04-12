@@ -12,6 +12,10 @@ function bisonte (SecretNumber) {
     if(numero / 2 == 1 || numero / 3 == 1 || numero % 5 == 1 || numero / 7 == 1) {
         bisonte += "%";
     }
+    var numero = parseInt(SecretNumber[3]);
+    if(numero / 2 == 1 || numero / 3 == 1 || numero % 5 == 1 || numero / 7 == 1) {
+        bisonte += "%";
+    }
     return bisonte;
 }
 
