@@ -46,4 +46,5 @@ describe("Sumar", () => {
   it("Devuelve **** en caso de tener varios valores que se repitan", () => {
     expect(juego("1234", "3244")).toEqual("!!*");
   });
+  
 });

@@ -42,4 +42,5 @@ function buscarPosicionDelNumero(numero, cadena, checkedToros, checkedVacas, pos
   return pos;
 }
 
+
 export default juego;
